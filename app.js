@@ -451,12 +451,12 @@
 
   /* ---------- 分頁切換 + Floating Island Nav ---------- */
   var navBtns = Array.prototype.slice.call(document.querySelectorAll("#nav .navbtn"));
-  var ORDER = ["player", "purchase", "unlock", "mood", "gallery"];
+  var ORDER = ["player", "purchase", "unlock", "mood"];
   function go(screen) {
     state.screen = screen;
     closeSheet();
     ORDER.forEach(function (s) {
-      $("screen-" + s).classList.toggle("active", s === screen);
+      var el = $("screen-" + s); if (el) el.classList.toggle("active", s === screen);
     });
     var i = ORDER.indexOf(screen);
     $("nav-ind").style.transform = "translateX(" + (i * 64) + "px)";
