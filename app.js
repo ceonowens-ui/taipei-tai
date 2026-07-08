@@ -124,10 +124,11 @@
   $("mood-eyebrow").textContent = (CFG.moodWall || {}).eyebrow || "";
   (function () {
     var GAL = CFG.gallery || {};
-    if (GAL.heading != null) $("gallery-heading").textContent = GAL.heading;
-    $("gallery-subheading").textContent = GAL.subheading || "";
-    var photos = GAL.photos || [];
     var scroll = $("gallery-scroll"), dots = $("gallery-dots");
+    if (!scroll || !dots) return;
+    var _gh = $("gallery-heading"); if (GAL.heading != null && _gh) _gh.textContent = GAL.heading;
+    var _gs = $("gallery-subheading"); if (_gs) _gs.textContent = GAL.subheading || "";
+    var photos = GAL.photos || [];
     scroll.innerHTML = photos.map(function (p) {
       return '<div class="gallery-slide"><img src="' + esc(p.src) + '" alt="">' +
         '<div class="gallery-shade"></div>' +
