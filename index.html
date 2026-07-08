@@ -871,7 +871,7 @@ body{color:var(--text);font-family:var(--font-sans-tc);-webkit-font-smoothing:an
 
     <!-- HERO -->
     <div class="hero">
-      <video class="hero-img hero-vid" src="hero.mp4" poster="hero-poster.jpg" autoplay loop muted playsinline></video>
+      <video class="hero-img hero-vid" poster="hero-poster.jpg" autoplay loop muted playsinline preload="auto"><source src="hero.webm" type="video/webm"><source src="hero.mp4" type="video/mp4"></video>
       <div class="hero-shade"></div>
       <div class="hero-glow"></div>
       <div class="hero-top">
@@ -1228,4 +1228,11 @@ body{color:var(--text);font-family:var(--font-sans-tc);-webkit-font-smoothing:an
 </script>
 
 
+<script>
+(function(){function kick(){document.querySelectorAll('video.hero-vid,video[autoplay]').forEach(function(v){try{v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}});}
+if(document.readyState!=='loading')kick();else document.addEventListener('DOMContentLoaded',kick);
+window.addEventListener('load',kick);
+['touchstart','pointerdown','click','scroll'].forEach(function(e){document.addEventListener(e,kick,{once:true,passive:true});});
+})();
+</script>
 </body></html>
