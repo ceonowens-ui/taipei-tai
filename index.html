@@ -1,241 +1,1231 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
+<html lang="zh-Hant"><head>
 <meta charset="utf-8">
-<!-- iPhone 鐵則：viewport-fit=cover 必須有，安全區才會生效 -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- PWA / iPhone 加入主畫面 -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<!-- theme-color 由 app.js 依 ALBUM_CONFIG.theme.themeColor 覆寫 -->
-<meta name="theme-color" content="#0d0a12">
-<!-- 標題與 icon 由 app.js 從 config 填入 -->
-<title>Album App</title>
-<link id="apple-touch-icon" rel="apple-touch-icon" href="assets/images/cover.png">
-
-<!-- 字體（想換字體就改這行 + styles.css 的 --font-* 變數） -->
+<meta name="theme-color" content="#080d16">
+<title>臺北台 TAIPEI TAI — CÉON</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* math */
 
-<link rel="stylesheet" href="styles.css">
+/* symbols */
+
+/* latin-ext */
+
+/* latin */
+
+/* math */
+
+/* symbols */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+/* cyrillic */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+</style>
+<style>
+:root{
+  --bg:#080d16; --bg-top:#14233c; --surface:rgba(20,30,48,.55);
+  --primary:#c6a261; --secondary:#34507a; --accent:#b08d4f;
+  --text:#fff; --muted:rgba(180,200,228,.62); --primary-rgb:198,162,97;
+  --grad:linear-gradient(135deg,var(--primary),var(--secondary) 52%,var(--accent));
+  --font-display:'Playfair Display',serif; --font-label:'Bodoni Moda',serif;
+  --font-serif-tc:'Noto Serif TC',serif; --font-sans-tc:'Noto Sans TC',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{background:#080d16}
+body{color:var(--text);font-family:var(--font-sans-tc);-webkit-font-smoothing:antialiased}
+/* 桌機:置中成手機比例;手機:滿版 */
+#stage{position:relative;width:100%;height:100vh;height:100dvh;margin:0 auto;overflow:hidden;background:var(--bg)}
+@media (min-width:520px){
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh;
+       background:radial-gradient(130% 100% at 50% -5%,var(--bg-top),#04070c 60%)}
+  #stage{width:416px;height:min(884px,96vh);border-radius:44px;
+         box-shadow:0 44px 90px rgba(0,0,0,.6),0 0 0 12px #12202f,0 0 0 13px rgba(255,255,255,.07)}
+}
+@media (max-width:519.98px){
+  html,body{background:#080d16}
+  #stage{position:fixed;inset:0;width:auto;height:auto;border-radius:0}
+}
+@media (display-mode:standalone){html,body{min-height:100lvh}}
+
+.home{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+      padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:62vh;min-height:420px;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 18%;
+          transform-origin:center 40%;animation:breathe 9s ease-in-out infinite}
+.hero-vid{animation:none;object-position:50% 30%}
+.hero-shade{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(7,17,31,.55) 0%,rgba(7,17,31,.05) 20%,rgba(7,17,31,0) 46%,rgba(7,17,31,.72) 82%,var(--bg) 100%)}
+.hero-glow{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(70% 42% at 50% 30%,rgba(var(--primary-rgb),.12),transparent 70%)}
+.hero-top{position:absolute;top:calc(20px + env(safe-area-inset-top));left:0;right:0;
+          text-align:center;z-index:2;padding:0 24px}
+.hero-eyebrow{font-family:var(--font-label);font-weight:500;font-size:9.5px;letter-spacing:5px;
+              color:rgba(255,255,255,.82);text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.hero-bottom{position:absolute;left:0;right:0;bottom:26px;text-align:center;z-index:2;padding:0 28px}
+.hero-title{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:52px;
+            line-height:.98;letter-spacing:1px;text-shadow:0 4px 26px rgba(0,0,0,.6)}
+.hero-artist{font-family:var(--font-serif-tc);font-size:14px;letter-spacing:5px;
+             color:rgba(255,255,255,.86);margin-top:12px}
+.hero-tagline{font-family:var(--font-serif-tc);font-weight:400;font-size:13px;line-height:1.75;
+              color:rgba(255,255,255,.66);margin-top:12px;max-width:290px;margin-left:auto;margin-right:auto;
+              text-wrap:balance}
+
+/* ===== ENTER CTA ===== */
+.body-pad{padding:0 20px;margin-top:-6px;position:relative;z-index:3}
+.enter{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+        padding:17px;border-radius:18px;background:var(--grad);color:#0a1420;border:none;cursor:pointer;
+        font-family:var(--font-serif-tc);font-weight:600;font-size:15px;letter-spacing:3px;
+        box-shadow:0 16px 38px rgba(var(--primary-rgb),.24),inset 0 1px 0 rgba(255,255,255,.5)}
+.enter:active{transform:scale(.985)}
+.enter svg{stroke:#0a1420}
+
+/* ===== 免費試聽 ===== */
+.sec-cap{font-family:var(--font-label);font-size:10px;letter-spacing:3.5px;color:rgba(255,255,255,.5);
+         text-transform:uppercase;padding:26px 6px 12px;display:flex;align-items:center;justify-content:space-between}
+.sec-cap b{color:var(--primary);font-weight:400}
+.free-card{background:var(--surface);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+           border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:7px 8px;
+           box-shadow:0 20px 48px rgba(0,0,0,.4)}
+.trow{display:flex;align-items:center;gap:13px;padding:12px 12px;border-radius:15px;cursor:pointer}
+.trow:active{background:rgba(255,255,255,.05)}
+.trow+.trow{border-top:1px solid rgba(255,255,255,.06)}
+.tnum{font-family:var(--font-label);font-size:13px;width:22px;text-align:center;color:var(--secondary);flex:none}
+.tmeta{flex:1;min-width:0}
+.tname{font-family:var(--font-serif-tc);font-size:15.5px;color:rgba(255,255,255,.9);
+       white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tsub{font-family:var(--font-sans-tc);font-size:11.5px;color:rgba(255,255,255,.48);margin-top:2px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tplay{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid rgba(var(--primary-rgb),.4);
+       background:rgba(var(--primary-rgb),.1);color:var(--primary);
+       display:flex;align-items:center;justify-content:center;cursor:pointer}
+
+/* ===== 探索捷徑 ===== */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px}
+.tile{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;
+      border:1px solid rgba(255,255,255,.1);min-height:118px;display:flex;flex-direction:column;
+      justify-content:flex-end;padding:15px}
+.tile.span{grid-column:1 / 3;min-height:98px}
+.tile-bg{position:absolute;inset:0;z-index:0}
+.tile-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.tile-tint{position:absolute;inset:0}
+.tile.unlock .tile-bg{background:
+  linear-gradient(135deg,rgba(var(--primary-rgb),.22),rgba(127,166,201,.12))}
+.tile.mood .tile-bg{background:
+  radial-gradient(120% 100% at 20% 0%,rgba(175,199,246,.24),rgba(16,32,48,.4) 70%)}
+.tile.gallery .tile-tint{background:linear-gradient(180deg,rgba(7,17,31,.15),rgba(7,17,31,.78))}
+.tile-lbl{position:relative;z-index:1}
+.tile-eb{font-family:var(--font-label);font-size:9px;letter-spacing:3px;text-transform:uppercase;
+         color:var(--primary)}
+.tile-tt{font-family:var(--font-serif-tc);font-size:16px;font-weight:600;color:#fff;margin-top:5px;letter-spacing:.5px}
+.tile-note{font-family:var(--font-sans-tc);font-size:11px;color:rgba(255,255,255,.6);margin-top:4px}
+.tile .arrow{position:absolute;top:14px;right:14px;z-index:1;color:rgba(255,255,255,.55)}
+
+/* ===== FLOATING ISLAND NAV ===== */
+#nav-wrap{position:absolute;left:0;right:0;bottom:calc(12px + env(safe-area-inset-bottom));
+          z-index:70;display:flex;justify-content:center;pointer-events:none}
+#nav{position:relative;display:flex;padding:6px;border-radius:30px;background:rgba(18,18,22,.16);
+     backdrop-filter:blur(44px) saturate(1.7);-webkit-backdrop-filter:blur(44px) saturate(1.7);
+     border:1px solid rgba(255,255,255,.1);pointer-events:auto;
+     box-shadow:0 16px 42px rgba(0,0,0,.44),inset 0 1px 0 rgba(255,255,255,.32),inset 0 -8px 16px rgba(255,255,255,.05)}
+#nav::before{content:"";position:absolute;inset:0;border-radius:30px;
+             background:linear-gradient(135deg,rgba(255,255,255,.16),transparent 42%);pointer-events:none}
+#nav-ind{position:absolute;top:6px;left:6px;width:58px;height:calc(100% - 12px);border-radius:21px;
+         transform:translateX(0);transition:transform .46s cubic-bezier(.34,1.32,.42,1);
+         background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(var(--primary-rgb),.12));
+         box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 12px rgba(var(--primary-rgb),.18)}
+.navbtn{position:relative;z-index:1;width:58px;padding:7px 0 6px;border:none;background:none;cursor:pointer;
+        display:flex;flex-direction:column;align-items:center;gap:3px;font-family:var(--font-serif-tc);
+        font-size:9px;letter-spacing:1px;color:#8794a6;transition:color .3s ease,transform .18s ease}
+.navbtn:active{transform:scale(.92)}
+.navbtn.active{color:#dbe9ff}
+.navbtn.active .navico{filter:drop-shadow(0 0 7px rgba(var(--primary-rgb),.6))}
+.navlbl{opacity:.62}.navbtn.active .navlbl{opacity:1}
+
+/* ===== 歌詞浮層(點試聽曲目彈出;靜置時完全不顯示,不改動原版面) ===== */
+.ly-ov{position:absolute;inset:0;z-index:80;display:flex;flex-direction:column;
+       background:rgba(8,13,22,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+       animation:ly-fade .28s ease}
+.ly-ov[hidden]{display:none}
+.ly-ov-head{flex:none;display:flex;align-items:flex-start;justify-content:space-between;
+            padding:calc(24px + env(safe-area-inset-top)) 24px 12px}
+.ly-ov-eb{font-family:var(--font-label);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--primary)}
+.ly-ov-tt{font-family:var(--font-serif-tc);font-size:18px;font-weight:600;color:#fff;margin-top:5px;letter-spacing:1px;text-wrap:balance}
+.ly-ov-x{width:36px;height:36px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.16);
+         background:rgba(255,255,255,.06);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ly-ov-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;
+            padding:6px 30px calc(56px + env(safe-area-inset-bottom));
+            font-family:var(--font-serif-tc);font-weight:300;font-size:15px;line-height:2.4;
+            color:rgba(242,237,227,.9);white-space:pre-line;text-align:center;letter-spacing:.5px}
+@keyframes ly-fade{from{opacity:0}to{opacity:1}}
+
+/* ===== 多頁切換 ===== */
+.page{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+      padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+.home[hidden],.page[hidden]{display:none}
+.phead{padding:calc(30px + env(safe-area-inset-top)) 24px 6px}
+.peb{font-family:var(--font-label);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--primary)}
+.ptt{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:34px;color:#fff;margin-top:6px;letter-spacing:.5px}
+.psub{font-family:var(--font-serif-tc);font-weight:300;font-size:12.5px;line-height:1.9;color:var(--muted);margin-top:10px;max-width:330px;text-wrap:pretty}
+.pbody{padding:14px 20px 0}
+
+/* 聽歌頁鎖定欄 */
+.lock-note{width:100%;margin-top:14px;display:flex;align-items:center;gap:14px;padding:15px 16px;
+           border-radius:18px;border:1px dashed rgba(var(--primary-rgb),.4);background:rgba(var(--primary-rgb),.06);cursor:pointer}
+.lock-note:active{transform:scale(.99)}
+.lock-note .ln-ic{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(var(--primary-rgb),.4);
+                  display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.lock-note .ln-tt{display:block;font-family:var(--font-serif-tc);font-size:14.5px;color:#fff}
+.lock-note .ln-sub{display:block;font-family:var(--font-sans-tc);font-size:11.5px;color:var(--muted);margin-top:3px}
+.lock-note .ln-ar{margin-left:auto;color:rgba(255,255,255,.5);flex:none}
+
+/* 完整版 */
+.buy-card{margin:18px 20px 0;background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:22px;
+          padding:24px 22px;box-shadow:0 20px 48px rgba(0,0,0,.4);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.buy-price{font-family:var(--font-display);font-weight:600;font-size:46px;color:#fff;display:flex;align-items:baseline}
+.buy-cur{font-size:20px;color:var(--primary);margin-right:3px}
+.buy-unit{font-family:var(--font-sans-tc);font-size:13px;color:var(--muted);font-weight:400;margin-left:4px}
+.buy-list{list-style:none;margin:18px 0 22px;display:flex;flex-direction:column;gap:11px}
+.buy-list li{font-family:var(--font-serif-tc);font-size:13.5px;color:rgba(255,255,255,.82);padding-left:24px;position:relative;line-height:1.5}
+.buy-list li::before{content:"";position:absolute;left:2px;top:3px;width:11px;height:6px;border-left:2px solid var(--primary);
+                     border-bottom:2px solid var(--primary);transform:rotate(-45deg)}
+.buy-btn{width:100%;padding:16px;border:none;border-radius:16px;background:var(--grad);color:#0a1420;cursor:pointer;
+         font-family:var(--font-serif-tc);font-weight:600;font-size:15px;letter-spacing:2px;
+         box-shadow:0 14px 32px rgba(var(--primary-rgb),.26),inset 0 1px 0 rgba(255,255,255,.5)}
+.buy-btn:active{transform:scale(.985)}
+.buy-free{width:100%;margin-top:10px;padding:13px;border:1px solid rgba(255,255,255,.16);border-radius:16px;
+          background:none;color:rgba(255,255,255,.8);cursor:pointer;font-family:var(--font-serif-tc);font-size:13px;letter-spacing:1px}
+.buy-fine{font-family:var(--font-sans-tc);font-size:11px;color:rgba(255,255,255,.44);text-align:center;margin-top:14px;line-height:1.6}
+.buy-done{text-align:center;padding:10px 0}
+.bd-ic{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;border:1.5px solid var(--primary);
+       display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.bd-tt{font-family:var(--font-serif-tc);font-size:19px;color:#fff;font-weight:600}
+.bd-sub{font-family:var(--font-sans-tc);font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.9}
+
+/* 曲目歌詞鈕 + 精選看更多 */
+.tly{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.16);
+     background:rgba(255,255,255,.05);color:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.tly:active{transform:scale(.92)}
+.trow .tplay{margin-left:2px}
+.cap-more{color:var(--primary);cursor:pointer;font-weight:400}
+
+/* 買回你的臺北 · 樂捐 */
+.don-wrap{padding:8px 26px 0}
+.don-poem{font-family:var(--font-serif-tc);font-weight:300;font-size:15px;line-height:2.1;color:rgba(242,237,227,.9);letter-spacing:.6px;margin-top:14px;text-wrap:balance}
+.don-hl{color:var(--primary);font-weight:400}
+.don-amount{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:30px 0 22px}
+.don-cur{font-family:var(--font-label);font-size:20px;color:var(--primary);letter-spacing:1px}
+.don-num{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:66px;color:#fff;line-height:1}
+.don-chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.don-chip{min-width:56px;padding:10px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:rgba(255,255,255,.8);cursor:pointer;font-family:var(--font-label);font-size:15px;letter-spacing:1px;transition:all .2s ease}
+.don-chip.active{border-color:transparent;background:var(--grad);color:#0a1420;font-weight:600;box-shadow:0 8px 22px rgba(var(--primary-rgb),.3)}
+.don-custom{display:flex;align-items:center;gap:8px;margin:16px auto 0;max-width:240px;padding:11px 16px;border-radius:14px;border:1px solid rgba(var(--primary-rgb),.4);background:rgba(255,255,255,.05)}
+.don-custom span{font-family:var(--font-label);color:var(--primary);font-size:14px}
+.don-custom input{flex:1;min-width:0;background:none;border:none;outline:none;color:#fff;font-family:var(--font-display);font-size:20px}
+.don-custom.hidden{display:none}
+.don-btn{width:100%;margin-top:26px;padding:16px;border:none;border-radius:16px;background:var(--grad);color:#0a1420;cursor:pointer;font-family:var(--font-serif-tc);font-weight:600;font-size:15px;letter-spacing:2px;box-shadow:0 14px 32px rgba(var(--primary-rgb),.26),inset 0 1px 0 rgba(255,255,255,.5)}
+.don-btn:active{transform:scale(.985)}
+.don-fine{font-family:var(--font-sans-tc);font-size:11.5px;color:rgba(255,255,255,.44);text-align:center;margin-top:16px;line-height:1.7}
+.don-done{text-align:center;padding:24px 0 0}
+.dd-ic{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;border:1.5px solid var(--primary);display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.dd-tt{font-family:var(--font-serif-tc);font-size:20px;color:#fff;font-weight:600;letter-spacing:1px}
+.dd-amt{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:38px;color:var(--primary);margin:14px 0 4px}
+.dd-sub{font-family:var(--font-serif-tc);font-weight:300;font-size:13.5px;color:var(--muted);margin-top:12px;line-height:1.9}
+.dd-fine{font-family:var(--font-sans-tc);font-size:11px;color:rgba(255,255,255,.36);margin-top:14px}
+.dd-back{max-width:220px;margin:22px auto 0}
+
+/* 心情牆 */
+.compose{margin:16px 20px 0;display:flex;gap:9px}
+.compose input{flex:1;min-width:0;padding:13px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);
+               background:rgba(255,255,255,.05);color:#fff;font-family:var(--font-serif-tc);font-size:13.5px;outline:none}
+.compose input::placeholder{color:rgba(255,255,255,.4)}
+.compose input:focus{border-color:rgba(var(--primary-rgb),.55)}
+.compose button{flex:none;padding:0 18px;border:none;border-radius:14px;background:var(--grad);color:#0a1420;cursor:pointer;
+                font-family:var(--font-serif-tc);font-weight:600;font-size:13px;letter-spacing:1px}
+.wall{padding:16px 20px 0;display:flex;flex-direction:column;gap:12px}
+.post{background:var(--surface);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px 18px;
+      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.post-txt{font-family:var(--font-serif-tc);font-size:14px;line-height:1.75;color:rgba(255,255,255,.9);text-wrap:pretty}
+.post-meta{font-family:var(--font-label);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+           color:var(--primary);margin-top:12px;display:flex;gap:8px;align-items:center}
+.post-meta .dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.3)}
+.post-meta .loc{color:rgba(255,255,255,.5)}
+.post.new{animation:pop .4s ease}
+@keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* 寫真牆 */
+.gal{padding:16px 16px 0;columns:2;column-gap:12px}
+.gcell{break-inside:avoid;margin-bottom:12px;border-radius:16px;overflow:hidden;position:relative;
+       border:1px solid rgba(255,255,255,.1);display:block}
+.gcell img{width:100%;display:block}
+.gcell.real{cursor:pointer}
+.gcell.real img{height:100%;object-fit:cover}
+.gcell.real.h1{height:170px}.gcell.real.h2{height:232px}
+.gcell.ph.h1{height:150px}.gcell.ph.h2{height:200px}
+.gcell.ph{background:linear-gradient(150deg,rgba(var(--primary-rgb),.16),rgba(52,80,122,.22))}
+.gcap{position:absolute;left:0;right:0;bottom:0;padding:14px 12px 10px;z-index:1;
+      background:linear-gradient(180deg,transparent,rgba(7,17,31,.82))}
+.geb{font-family:var(--font-label);font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--primary)}
+.gtt{font-family:var(--font-serif-tc);font-size:13px;color:#fff;margin-top:3px}
+.phn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+     font-family:var(--font-label);font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.32);text-transform:uppercase}
+.img-ov{position:absolute;inset:0;z-index:85;background:rgba(4,8,14,.95);display:flex;align-items:center;justify-content:center;
+        padding:20px;animation:ly-fade .28s ease}
+.img-ov[hidden]{display:none}
+.img-ov img{max-width:100%;max-height:82%;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.img-ov-x{position:absolute;top:calc(20px + env(safe-area-inset-top));right:20px;width:38px;height:38px;border-radius:50%;
+          border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;
+          display:flex;align-items:center;justify-content:center;z-index:1}
+
+/* toast */
+#toast{position:absolute;left:50%;bottom:calc(96px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(10px);
+       z-index:90;max-width:80%;padding:11px 18px;border-radius:14px;background:rgba(28,20,22,.92);
+       border:1px solid rgba(255,120,110,.35);color:#ffd9d4;font-family:var(--font-serif-tc);font-size:12.5px;letter-spacing:.5px;
+       text-align:center;opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease;backdrop-filter:blur(12px)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap">
 </head>
 <body>
+
 <div id="stage">
+  <section class="home" data-page="home">
 
-  <!-- ================= PLAYER（聽歌）================= -->
-  <section id="screen-player" class="screen active">
-    <div class="player-fold">
-
-      <!-- 封面（換圖：album-config.js → coverImage） -->
-      <div class="cover-card" id="cover-card">
-        <img id="cover-img" src="" alt="">
-        <div class="cover-shade"></div>
-        <div class="cover-titles">
-          <div class="cover-eyebrow" id="cover-eyebrow"></div>
-          <div class="cover-title-en" id="cover-title-en"></div>
-        </div>
+    <!-- HERO -->
+    <div class="hero">
+      <video class="hero-img hero-vid" src="hero.mp4" poster="hero-poster.jpg" autoplay loop muted playsinline></video>
+      <div class="hero-shade"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-top">
+        <div class="hero-eyebrow">CÉON · Studio Album</div>
       </div>
-
-      <!-- Now Playing 毛玻璃卡片 -->
-      <div class="np-card">
-        <div class="np-head">
-          <div style="flex:1;min-width:0">
-            <div class="np-label" id="np-label"></div>
-            <div class="np-title" id="np-title">—</div>
-            <div class="np-sub" id="np-sub"></div>
-          </div>
-          <div class="np-actions">
-            <!-- 歌詞按鈕（這首歌沒歌詞時 app.js 會自動隱藏） -->
-            <button class="icon-round" id="btn-lyrics" title="歌詞">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M4 20h2"/><path d="M4 4h16"/><path d="M4 12h10"/></svg>
-            </button>
-            <!-- 心動收藏 -->
-            <button class="icon-round" id="btn-heart" title="收藏這一刻">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.3 1.9 4.8 5.2 4.8c2 0 3.3 1.2 3.9 2.2.6-1 1.9-2.2 3.9-2.2 3.3 0 4.9 3.5 3.2 6.9C19.5 16.4 12 21 12 21z"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- 進度條（可點、可拖曳） -->
-        <div class="prog" id="prog">
-          <div class="prog-fill" id="prog-fill"></div>
-          <div class="prog-glow" id="prog-glow"></div>
-          <div class="prog-dot" id="prog-dot"></div>
-        </div>
-        <div class="np-times"><span id="t-cur">0:00</span><span id="t-dur">0:00</span></div>
-
-        <!-- 控制鍵 -->
-        <div class="np-controls">
-          <button class="btn-ghost" id="btn-prev" title="上一首">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-          </button>
-          <button class="btn-play" id="btn-play" title="播放 / 暫停">
-            <svg width="23" height="23" viewBox="0 0 24 24"><path id="play-icon-path" d="M8 5v14l11-7z"/></svg>
-          </button>
-          <button class="btn-ghost" id="btn-next" title="下一首">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-          </button>
-        </div>
-
-        <!-- Next Scene → 打開 Bottom Sheet 曲目表 -->
-        <div class="np-next" id="btn-open-sheet">
-          <span id="next-scene-label"></span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
+      <div class="hero-bottom">
+        <div class="hero-title">TAIPEI TAI</div>
+        <div class="hero-artist">璽揚　Cèon</div>
+        <div class="hero-tagline">台北人，台北城。用獨一無二的方式，渡過人生。</div>
       </div>
     </div>
 
-    <!-- 完整曲目列表（app.js 依 config.tracks 產生） -->
-    <div class="tracklist-block">
-      <div class="tracklist-caption" id="tracklist-caption"></div>
-      <div id="tracklist"></div>
-    </div>
-  </section>
-
-  <!-- ================= PURCHASE（付費解鎖）================= -->
-  <section id="screen-purchase" class="screen screen-sub">
-    <div class="page-titles">
-      <div class="page-title-en" id="purchase-title-en"></div>
-      <div class="page-title-tc" id="purchase-title-tc"></div>
-      <div class="page-note" id="purchase-note"></div>
-    </div>
-    <!-- 方案卡（app.js 依 config.payment 產生） -->
-    <div class="plans" id="plans"></div>
-    <div class="cta-block">
-      <button class="btn-primary" id="btn-checkout"></button>
-      <button class="btn-outline" id="btn-goto-unlock">已經購買？輸入兌換碼</button>
-    </div>
-  </section>
-
-  <!-- ================= UNLOCK（秘密 · 兌換）================= -->
-  <section id="screen-unlock" class="screen screen-sub">
-    <div class="page-titles">
-      <div class="page-title-en" id="unlock-title-en"></div>
-      <div class="page-title-tc" id="unlock-subtitle" style="font-size:14px;color:rgba(255,255,255,.6);letter-spacing:3px"></div>
-    </div>
-
-    <!-- 未解鎖：email + code 表單 -->
-    <div id="unlock-form-view">
-      <div style="text-align:center;padding:26px 28px 0">
-        <div class="unlock-lock-badge">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-        </div>
-        <div class="page-note" style="margin-top:0;padding:0 10px">購買後兌換碼會寄到信箱，請用「購買時的 email」解鎖完整專輯</div>
-      </div>
-      <div class="form-block">
-        <label class="form-label" for="in-email">EMAIL</label>
-        <input class="form-input" id="in-email" type="email" placeholder="you@example.com" autocomplete="email">
-        <label class="form-label" for="in-code">兌換碼 · CODE</label>
-        <input class="form-input" id="in-code" type="text" placeholder="" autocomplete="off" style="margin-bottom:22px">
-        <button class="btn-primary" id="btn-redeem">解鎖</button>
-        <div class="form-hint" id="btn-goto-purchase">還沒購買？<b>看方案 →</b></div>
-      </div>
-    </div>
-
-    <!-- 已解鎖 -->
-    <div id="unlock-done-view" class="hidden">
-      <div class="unlocked-card">
-        <div class="unlocked-check">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="unlocked-eyebrow">FULL ALBUM UNLOCKED</div>
-        <div class="unlocked-title" id="unlocked-title"></div>
-        <div class="page-note" id="unlocked-desc" style="margin-top:8px"></div>
-        <div class="unlocked-actions">
-          <button class="btn-chip" id="btn-goto-player">前往聽歌 →</button>
-          <a class="btn-chip grad hidden" id="btn-wav" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            下載 WAV 無損 ↗
-          </a>
-        </div>
-        <div class="unlocked-note" id="unlocked-plan-note"></div>
-        <div class="unlocked-reset" id="btn-reset-unlock">重設解鎖（測試用）</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MOOD WALL（心情牆）================= -->
-  <section id="screen-mood" class="screen screen-sub">
-    <div class="page-titles">
-      <div style="font-family:var(--font-label);font-weight:700;font-size:23px;letter-spacing:3px" id="mood-heading"></div>
-      <div class="page-title-tc" id="mood-subheading" style="font-size:13px;color:rgba(255,255,255,.65);margin-top:12px;letter-spacing:1px;line-height:1.7"></div>
-      <div style="font-family:var(--font-label);font-size:10px;letter-spacing:3px;color:var(--primary);margin-top:7px;text-transform:uppercase" id="mood-eyebrow"></div>
-    </div>
-    <div class="mood-count">今晚有 <b id="mood-count">0</b> 個人，把秘密留在這裡。</div>
-    <div class="mood-form">
-      <input class="form-input" id="mood-name" type="text" placeholder="你的暱稱" maxlength="16" autocomplete="off">
-      <div class="mood-tags" id="mood-tags"></div>
-      <textarea class="mood-textarea" id="mood-text" maxlength="80" placeholder="現在聽這首歌，你想留下什麼心情？"></textarea>
-      <div class="mood-chars"><span id="mood-chars">0</span> / 80</div>
-      <div class="mood-err hidden" id="mood-err">先寫下一點心情吧。</div>
-      <button class="btn-primary mood-submit" id="btn-mood-submit">留下心情</button>
-    </div>
-    <div class="mood-notes" id="mood-notes"></div>
-  </section>
-
-  <!-- ================= BOTTOM SHEET（曲目表，可拖曳關閉）================= -->
-  <div id="sheet-backdrop" class="hidden"></div>
-  <div id="sheet" class="hidden">
-    <div class="sheet-grabber" id="sheet-grabber"></div>
-    <div class="sheet-head">
-      <div>
-        <div class="sheet-eyebrow">Track List</div>
-        <div class="sheet-title" id="sheet-title"></div>
-      </div>
-      <button class="sheet-close" id="btn-close-sheet">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    <!-- ENTER -->
+    <div class="body-pad">
+      <button class="enter">開始聆聽 · 全 10 首
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
       </button>
-    </div>
-    <div class="sheet-list" id="sheet-list"></div>
-  </div>
 
-  <!-- ================= LYRICS OVERLAY ================= -->
-  <div id="lyrics-overlay" class="hidden">
-    <div class="lyrics-head">
-      <div>
-        <div class="sheet-eyebrow" id="lyrics-eyebrow">Lyrics</div>
-        <div class="sheet-title" id="lyrics-title"></div>
+      <!-- 精選試聽 -->
+      <div class="sec-cap"><span>精選試聽</span><b class="cap-more" data-go="listen">全部 10 首 →</b></div>
+      <div class="free-card">
+        <div class="trow" data-track="1">
+          <span class="tnum">01</span>
+          <div class="tmeta"><div class="tname">臺北台</div><div class="tsub">詞曲 CÉON</div></div>
+          <button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button>
+          <button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button>
+        </div>
+        <div class="trow" data-track="2">
+          <span class="tnum">02</span>
+          <div class="tmeta"><div class="tname">小姐,煞到你</div><div class="tsub">詞曲 璽揚 Cèon</div></div>
+          <button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button>
+          <button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button>
+        </div>
+        <div class="trow" data-track="3">
+          <span class="tnum">03</span>
+          <div class="tmeta"><div class="tname">浪漫末世代 (feat. 何夏)</div><div class="tsub">詞 何夏｜曲 璽揚 Cèon</div></div>
+          <button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button>
+          <button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button>
+        </div>
       </div>
-      <button class="sheet-close" id="btn-close-lyrics">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="lyrics-body" id="lyrics-body"></div>
-  </div>
 
-  <!-- ================= FLOATING ISLAND NAV ================= -->
+      <!-- 探索捷徑 -->
+      <div class="sec-cap"><span>探索</span></div>
+      <div class="grid">
+        <div class="tile unlock span">
+          <div class="tile-bg"></div>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
+          <div class="tile-lbl">
+            <div class="tile-eb">A Love Letter</div>
+            <div class="tile-tt">買回你的臺北</div>
+            <div class="tile-note">整張免費。喜歡的話，用你的方式樂捐支持。</div>
+          </div>
+        </div>
+        <div class="tile mood">
+          <div class="tile-bg"></div>
+          <div class="tile-lbl">
+            <div class="tile-eb">Taipei Wall</div>
+            <div class="tile-tt">心情牆</div>
+            <div class="tile-note">留下你的台北故事</div>
+          </div>
+        </div>
+        <div class="tile gallery">
+          <div class="tile-bg"><img class="tile-img" src="hero-poster.jpg" alt=""><div class="tile-tint"></div></div>
+          <div class="tile-lbl">
+            <div class="tile-eb">Gallery</div>
+            <div class="tile-tt">寫真牆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聽歌 -->
+  <section class="page" data-page="listen" hidden>
+    <header class="phead">
+      <div class="peb">Playlist · 聽歌</div>
+      <h1 class="ptt">全部曲目</h1>
+      <p class="psub">全 10 首，全部免費聆聽。點左邊歌詞鈕看詞，點右邊播放鈕聆聽。</p>
+    </header>
+    <div class="pbody">
+      <div class="free-card">
+        <div class="trow" data-track="1"><span class="tnum">01</span><div class="tmeta"><div class="tname">臺北台</div><div class="tsub">詞曲 CÉON</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="2"><span class="tnum">02</span><div class="tmeta"><div class="tname">小姐,煞到你</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="3"><span class="tnum">03</span><div class="tmeta"><div class="tname">浪漫末世代 (feat. 何夏)</div><div class="tsub">詞 何夏｜曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="4"><span class="tnum">04</span><div class="tmeta"><div class="tname">心愛ㄟ 你治叨位?</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="5"><span class="tnum">05</span><div class="tmeta"><div class="tname">Taipei 霓虹</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="6"><span class="tnum">06</span><div class="tmeta"><div class="tname">過於悲傷的浪漫</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="7"><span class="tnum">07</span><div class="tmeta"><div class="tname">想要你的 Photograph</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="8"><span class="tnum">08</span><div class="tmeta"><div class="tname">You So Pretty (feat. 张婧)</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="9"><span class="tnum">09</span><div class="tmeta"><div class="tname">Shine Like Moonlight (feat. 楊琳)</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+        <div class="trow" data-track="10"><span class="tnum">10</span><div class="tmeta"><div class="tname">Be Good</div><div class="tsub">詞曲 璽揚 Cèon</div></div><button class="tly" title="歌詞"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M4 20h2"></path><path d="M4 4h16"></path><path d="M4 12h10"></path></svg></button><button class="tplay"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 買回你的臺北 · 樂捐 -->
+  <section class="page donate" data-page="unlock" hidden>
+    <header class="phead">
+      <div class="peb">A Love Letter</div>
+      <h1 class="ptt">買回你的臺北</h1>
+    </header>
+    <div class="don-wrap" id="don-wrap">
+      <p class="don-poem">這張專輯，永遠免費。<br>但如果某一段旋律，<br>讓你想起冰宮、霓虹，<br>或那個回不去的年代——<br>你可以用自己的方式，<br>買回一點點，<span class="don-hl">你的臺北</span>。</p>
+      <div class="don-amount"><span class="don-cur">NT$</span><span class="don-num" id="don-num">100</span></div>
+      <div class="don-chips" id="don-chips">
+        <button class="don-chip" data-amt="50">50</button>
+        <button class="don-chip active" data-amt="100">100</button>
+        <button class="don-chip" data-amt="300">300</button>
+        <button class="don-chip" data-amt="500">500</button>
+        <button class="don-chip" data-amt="custom">自訂</button>
+      </div>
+      <div class="don-custom hidden" id="don-custom"><span>NT$</span><input id="don-input" type="number" inputmode="numeric" min="1" placeholder="輸入你的心意金額"></div>
+      <button class="don-btn" id="don-btn">以這份心意，買回你的臺北</button>
+      <p class="don-fine">整張專輯皆可免費聆聽，樂捐純屬自由心意——沒有金額，也沒關係。</p>
+    </div>
+  </section>
+
+  <!-- 心情牆 -->
+  <section class="page" data-page="mood" hidden>
+    <header class="phead">
+      <div class="peb">Taipei Wall · 心情牆</div>
+      <h1 class="ptt">留下你的台北故事</h1>
+      <p class="psub">你的台北是什麼樣子？寫一句話，貼上這面牆。</p>
+    </header>
+    <div class="compose">
+      <input id="mood-in" type="text" placeholder="分享你的台北故事…" maxlength="120">
+      <button id="mood-post">貼上</button>
+    </div>
+    <div class="wall" id="wall">
+      <article class="post"><div class="post-txt">冰宮散場的那晚，牽著手走過台北橋，霓虹一路亮到天亮。</div><div class="post-meta"><span>2 小時前</span><span class="dot"></span><span class="loc">阿凱 · 三重</span></div></article>
+      <article class="post"><div class="post-txt">大稻埕的午後，外公的布店還在，只是換了新招牌。</div><div class="post-meta"><span>昨天</span><span class="dot"></span><span class="loc">Yuki · 大同區</span></div></article>
+      <article class="post"><div class="post-txt">在錢櫃唱到天亮的那個包廏，塔滿了我們二十歲的故事。</div><div class="post-meta"><span>3 天前</span><span class="dot"></span><span class="loc">老王 · 東區</span></div></article>
+      <article class="post"><div class="post-txt">松山機場看飛機起降，是我小時候最奸侈的浪漫。</div><div class="post-meta"><span>上週</span><span class="dot"></span><span class="loc">匿名 · 內湖</span></div></article>
+    </div>
+  </section>
+
+  <!-- 寫真牆 -->
+  <section class="page" data-page="gallery" hidden>
+    <header class="phead">
+      <div class="peb">Gallery · 寫真牆</div>
+      <h1 class="ptt">台北・寫真</h1>
+      <p class="psub">鏡頭下的臺北台。點圖看大圖。</p>
+    </header>
+    <div class="gal">
+      <figure class="gcell real h2"><img src="hero-poster.jpg" alt="" style="object-position:60% 15%"><figcaption class="gcap"><div class="geb">Cover</div><div class="gtt">臺北台・天際</div></figcaption></figure>
+      <figure class="gcell ph h1"><div class="phn">大稻埕</div></figure>
+      <figure class="gcell ph h2"><div class="phn">冰宮 90s</div></figure>
+      <figure class="gcell real h1"><img src="hero-poster.jpg" alt="" style="object-position:50% 42%"><figcaption class="gcap"><div class="geb">Portrait</div><div class="gtt">側影</div></figcaption></figure>
+      <figure class="gcell ph h2"><div class="phn">霓虹</div></figure>
+      <figure class="gcell ph h1"><div class="phn">台北橋</div></figure>
+    </div>
+  </section>
+
+  <!-- FLOATING NAV（首頁 active） -->
   <nav id="nav-wrap">
     <div id="nav">
       <div id="nav-ind"></div>
-      <button class="navbtn active" data-screen="player">
-        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
-        <span class="navlbl"></span>
+      <button class="navbtn active">
+        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path><path d="M9 21v-7h6v7"></path></svg></span>
+        <span class="navlbl">首頁</span>
       </button>
-      <button class="navbtn" data-screen="purchase">
-        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1"/></svg></span>
-        <span class="navlbl"></span>
+      <button class="navbtn">
+        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+        <span class="navlbl">聽歌</span>
       </button>
-      <button class="navbtn" data-screen="unlock">
-        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span>
-        <span class="navlbl"></span>
+      <button class="navbtn">
+        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"></path><circle cx="7" cy="7" r="1"></circle></svg></span>
+        <span class="navlbl">完整版</span>
       </button>
-      <button class="navbtn" data-screen="mood">
-        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.49 4.04 3 5.5l7 7Z"/></svg></span>
-        <span class="navlbl"></span>
+      <button class="navbtn">
+        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.49 4.04 3 5.5l7 7Z"></path></svg></span>
+        <span class="navlbl">心情牆</span>
+      </button>
+      <button class="navbtn">
+        <span class="navico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg></span>
+        <span class="navlbl">寫真牆</span>
       </button>
     </div>
   </nav>
 
-  <!-- TOAST + 特效層 -->
+  <audio id="au" preload="none"></audio>
+  <div id="ly-ov" class="ly-ov" hidden="">
+    <div class="ly-ov-head">
+      <div><div class="ly-ov-eb">Lyrics · 歌詞</div><div class="ly-ov-tt" id="ly-ov-tt"></div></div>
+      <button class="ly-ov-x" id="ly-ov-x" aria-label="close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+    </div>
+    <div class="ly-ov-body" id="ly-ov-body"></div>
+  </div>
+  <div id="img-ov" class="img-ov" hidden="">
+    <button class="img-ov-x" id="img-ov-x" aria-label="close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+    <img id="img-ov-i" alt="">
+  </div>
   <div id="toast"></div>
-  <div id="fx-layer"></div>
-
 </div>
+<script>
+(function(){
+  var AUD="https://ceonowens-ui.github.io/taipei-tai/assets/audio/";
+  var NAMES={1:"臺北台",2:"小姐,煞到你",3:"浪漫末世代 (feat. 何夏)",4:"心愛ㄟ 你治叨位?",5:"Taipei 霓虹",6:"過於悲傷的浪漫",7:"想要你的 Photograph",8:"You So Pretty (feat. 张婧)",9:"Shine Like Moonlight (feat. 楊琳)",10:"Be Good"};
+  var LYURL="https://ceonowens-ui.github.io/taipei-tai/assets/lyrics/";
+  var LYCACHE={};
+  var au=document.getElementById("au");
+  var PLAY="M8 5v14l11-7z", PAUSE="M6 5h4v14H6zM14 5h4v14h-4z";
+  var cur=0;
+  function pad(n){return (n<10?"0":"")+n;}
 
-<!-- 專輯資料（換專輯只改這個檔）→ 再載入引擎 -->
-<script src="album-config.js?v=3"></script>
-<script src="app.js?v=3"></script>
-</body>
-</html>
+  /* ---------- toast(音檔載入失敗提示) ---------- */
+  var toast=document.getElementById("toast"), toastT;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent=msg; toast.classList.add("show");
+    clearTimeout(toastT); toastT=setTimeout(function(){toast.classList.remove("show");},2800);
+  }
+
+  /* ---------- 播放（跨所有分頁的曲目列同步） ---------- */
+  var rows=[].slice.call(document.querySelectorAll(".trow[data-track]"));
+  function sync(){
+    rows.forEach(function(r){
+      var t=+r.getAttribute("data-track");
+      var p=r.querySelector(".tplay path");
+      var on=(cur===t && !au.paused && !au.ended);
+      if(p) p.setAttribute("d", on?PAUSE:PLAY);
+      r.classList.toggle("playing", on);
+    });
+  }
+  function fail(err){
+    if(err && err.name==="AbortError") return; /* 被下一次載入打斷,忽略 */
+    cur=0; sync(); showToast("音檔載入失敗,請確認網路連線");
+  }
+  function play(n){
+    if(cur===n){ if(au.paused){au.play().catch(fail);}else{au.pause();} return; }
+    cur=n; au.src=AUD+pad(n)+".mp3"; au.play().catch(fail);
+  }
+  au.addEventListener("play",sync);
+  au.addEventListener("pause",sync);
+  au.addEventListener("error",function(){ cur=0; sync(); showToast("音檔載入失敗,請確認網路連線"); });
+  au.addEventListener("ended",function(){                 /* 自動接播下一首 */
+    var next=cur+1;
+    if(NAMES[next]){ play(next); } else { cur=0; sync(); }
+  });
+  rows.forEach(function(r){
+    var n=+r.getAttribute("data-track");
+    var pb=r.querySelector(".tplay");
+    if(pb) pb.addEventListener("click",function(e){e.stopPropagation();play(n);});
+    var lyb=r.querySelector(".tly");
+    if(lyb) lyb.addEventListener("click",function(e){e.stopPropagation();openLy(n);});
+    var meta=r.querySelector(".tmeta");
+    if(meta){ meta.style.cursor="pointer"; meta.addEventListener("click",function(){play(n);}); }
+  });
+
+  /* ---------- 歌詞浮層 ---------- */
+  var ov=document.getElementById("ly-ov"),
+      ovtt=document.getElementById("ly-ov-tt"),
+      ovbody=document.getElementById("ly-ov-body");
+  function openLy(n){
+    ovtt.textContent=NAMES[n]||"";
+    ov.hidden=false; ovbody.scrollTop=0;
+    if(LYCACHE[n]!=null){ ovbody.textContent=LYCACHE[n]; return; }
+    ovbody.textContent="載入歌詞中…";
+    fetch(LYURL+pad(n)+".txt").then(function(r){ if(!r.ok) throw 0; return r.text(); })
+      .then(function(t){ LYCACHE[n]=(t||"").trim()||"這首歌暫時沒有歌詞"; ovbody.textContent=LYCACHE[n]; })
+      .catch(function(){ ovbody.textContent="歌詞載入失敗，請確認網路連線"; });
+  }
+  document.getElementById("ly-ov-x").addEventListener("click",function(){ov.hidden=true;});
+  ov.addEventListener("click",function(e){ if(e.target===ov) ov.hidden=true; });
+
+  /* ---------- 分頁切換 ---------- */
+  var order=["home","listen","unlock","mood","gallery"];
+  var pages={};
+  order.forEach(function(k){ pages[k]=document.querySelector('[data-page="'+k+'"]'); });
+  var navbtns=[].slice.call(document.querySelectorAll(".navbtn"));
+  var navInd=document.getElementById("nav-ind");
+  function go(key){
+    var idx=order.indexOf(key); if(idx<0) return;
+    order.forEach(function(k){ if(pages[k]) pages[k].hidden=(k!==key); });
+    navbtns.forEach(function(b,i){ b.classList.toggle("active", i===idx); });
+    if(navInd) navInd.style.transform="translateX("+(idx*58)+"px)";
+    if(pages[key]) pages[key].scrollTop=0;
+  }
+  navbtns.forEach(function(b,i){ b.addEventListener("click",function(){ go(order[i]); }); });
+
+  /* ---------- 首頁進入鈕 + 探索卡 + 任何 data-go 按鈕 ---------- */
+  var enter=document.querySelector(".enter");
+  if(enter) enter.addEventListener("click",function(){ go("listen"); play(1); });
+  var tmap={unlock:".tile.unlock",mood:".tile.mood",gallery:".tile.gallery"};
+  Object.keys(tmap).forEach(function(k){
+    var el=document.querySelector(tmap[k]);
+    if(el) el.addEventListener("click",function(){ go(k); });
+  });
+  [].slice.call(document.querySelectorAll("[data-go]")).forEach(function(el){
+    el.addEventListener("click",function(){ go(el.getAttribute("data-go")); });
+  });
+
+  /* ---------- 買回你的臺北 · 自由樂捐 ---------- */
+  var donWrap=document.getElementById("don-wrap"),
+      donNum=document.getElementById("don-num"),
+      donChips=document.getElementById("don-chips"),
+      donCustom=document.getElementById("don-custom"),
+      donInput=document.getElementById("don-input"),
+      donBtn=document.getElementById("don-btn");
+  var donAmt=100;
+  function setAmt(v){ donAmt=v; if(donNum) donNum.textContent=(v>0? v.toLocaleString():"—"); }
+  if(donChips) [].slice.call(donChips.querySelectorAll(".don-chip")).forEach(function(c){
+    c.addEventListener("click",function(){
+      [].slice.call(donChips.querySelectorAll(".don-chip")).forEach(function(x){x.classList.remove("active");});
+      c.classList.add("active");
+      if(c.getAttribute("data-amt")==="custom"){
+        if(donCustom) donCustom.classList.remove("hidden");
+        if(donInput){ donInput.focus(); setAmt(parseInt(donInput.value,10)||0); }
+      } else {
+        if(donCustom) donCustom.classList.add("hidden");
+        setAmt(parseInt(c.getAttribute("data-amt"),10));
+      }
+    });
+  });
+  if(donInput) donInput.addEventListener("input",function(){ setAmt(parseInt(donInput.value,10)||0); });
+  if(donBtn) donBtn.addEventListener("click",function(){
+    var amt=donAmt>0?donAmt:0;
+    if(donWrap) donWrap.innerHTML='<div class="don-done"><div class="dd-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.3 1.9 4.8 5.2 4.8c2 0 3.3 1.2 3.9 2.2.6-1 1.9-2.2 3.9-2.2 3.3 0 4.9 3.5 3.2 6.9C19.5 16.4 12 21 12 21z"></path></svg></div><div class="dd-tt">謝謝你，買回了一點臺北</div>'+(amt>0?'<div class="dd-amt">NT$ '+amt.toLocaleString()+'</div>':'')+'<div class="dd-sub">你的心意，會化成璽揚繼續寫歌的力量。<br>整張專輯，永遠為你開著。</div><div class="dd-fine">此為示意流程，未串接金流。</div><button class="don-btn dd-back" id="dd-back">回去聽歌</button></div>';
+    var back=document.getElementById("dd-back");
+    if(back) back.addEventListener("click",function(){ go("listen"); });
+  });
+
+  /* ---------- 心情牆發文 ---------- */
+  var moodIn=document.getElementById("mood-in"),
+      moodPost=document.getElementById("mood-post"),
+      wall=document.getElementById("wall");
+  function post(){
+    if(!moodIn||!wall) return;
+    var v=(moodIn.value||"").trim(); if(!v) return;
+    var el=document.createElement("article"); el.className="post new";
+    var txt=document.createElement("div"); txt.className="post-txt"; txt.textContent=v;
+    var meta=document.createElement("div"); meta.className="post-meta";
+    meta.innerHTML='<span>剛剛</span><span class="dot"></span><span class="loc">匿名 · 台北</span>';
+    el.appendChild(txt); el.appendChild(meta);
+    wall.insertBefore(el, wall.firstChild);
+    moodIn.value=""; moodIn.blur();
+  }
+  if(moodPost) moodPost.addEventListener("click",post);
+  if(moodIn) moodIn.addEventListener("keydown",function(e){ if(e.key==="Enter") post(); });
+
+  /* ---------- 寫真牆燈箱 ---------- */
+  var imgOv=document.getElementById("img-ov"),
+      imgOvI=document.getElementById("img-ov-i");
+  [].slice.call(document.querySelectorAll(".gcell.real")).forEach(function(c){
+    c.addEventListener("click",function(){
+      var im=c.querySelector("img");
+      if(im&&imgOv&&imgOvI){ imgOvI.src=im.currentSrc||im.src; imgOv.hidden=false; }
+    });
+  });
+  if(imgOv) imgOv.addEventListener("click",function(e){
+    if(e.target===imgOv || (e.target.closest&&e.target.closest("#img-ov-x"))) imgOv.hidden=true;
+  });
+})();
+</script>
+
+
+</body></html>
