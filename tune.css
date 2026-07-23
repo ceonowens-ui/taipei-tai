@@ -1,0 +1,32 @@
+/* =====================================================================
+ * tune.css — iphone-frame-live-tuner 合約疊加層
+ * ---------------------------------------------------------------------
+ * 把播放器版面數值接到 --pv-* 變數，fallback = 原設計值。
+ * 單獨開 player.html 完全不受影響（用 fallback）；只有被 preview.html
+ * 的 iframe 注入 --pv-* / --sat / --sab 時才會即時變動。
+ * 在 styles.css 之後載入，用來覆蓋原本寫死的數值。
+ * ===================================================================== */
+
+/* 封面上距：頂部安全區（可被 --sat 模擬覆蓋）之外再留多少空 */
+.cover-card{
+  margin: calc(var(--sat, env(safe-area-inset-top)) + var(--pv-cover-top, 16px)) 12px 0 !important;
+}
+
+/* Now Playing 卡片往上疊住封面多少 */
+.np-card{
+  margin: calc(-1 * var(--pv-card-overlap, 52px)) 18px 0 !important;
+}
+
+/* 底部浮動 nav 島：距底部安全區（可被 --sab 模擬覆蓋）+ 下距 + 微移 */
+#nav-wrap{
+  bottom: calc(
+    var(--sab, env(safe-area-inset-bottom))
+    + var(--pv-nav-bottom, 12px)
+    + var(--pv-nav-shift-y, 0px)
+  ) !important;
+}
+
+/* nav 島整體不透明度 0~1 */
+#nav{
+  opacity: var(--pv-nav-opacity, 1);
+}
