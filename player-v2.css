@@ -1,0 +1,267 @@
+/* =====================================================================
+ * player-v2.css — 臺北台 UI/UX 升級層（CHANCE 流程版）
+ * ---------------------------------------------------------------------
+ * ★ 版型完全保留原設計（圓角封面卡 + Now Playing 上疊 + 主畫面曲目清單）
+ *   只升級「字級 / 按鈕 / 歌詞頁 / 配色一致性」。
+ *   不改任何 app.js 依賴的 id / class。
+ *   拿掉 tune.css 第一行的 @import 即 100% 還原。
+ *
+ * 修改前實測基準：
+ *   nav 選中 rgb(251,214,230) 粉紅 ／ 上下一首 36×39 ／ 歌詞關閉 34×34
+ *   曲目列 43px ／ 主播放鍵 46px ／ nav 標籤 9px ／ NOW PLAYING 9px
+ *   TRACKS 10px ／ NEXT TRACK 10px ／ 時間碼 11px@55%
+ * ===================================================================== */
+
+/* --- 0. 無障礙：尊重系統「減少動態效果」 --- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+/* --- 1. 封面 --- */
+.cover-card img,.cover-card video{ animation-duration:14s; }
+.cover-eyebrow{ font-size:10px; letter-spacing:4.6px; color:rgba(255,255,255,.9); }
+.cover-title-en{ font-size:30px; text-shadow:0 4px 24px rgba(0,0,0,.7); }
+
+/* --- 2. Now Playing 卡片：字級層級重建 --- */
+.np-card{
+  padding:14px 18px 8px !important;
+  border-color:rgba(255,255,255,.16) !important;
+}
+.np-label{                      /* 9px → 11px，金色 */
+  font-size:11px !important; letter-spacing:3.4px;
+  color:var(--primary); font-weight:600;
+}
+.np-title{ font-size:24px !important; margin-top:4px; letter-spacing:1.2px; }
+.np-sub{
+  font-size:13.5px !important; margin-top:4px;
+  color:rgba(255,255,255,.82) !important;
+}
+
+/* 歌詞 / 收藏圓鈕：維持 44pt，提高對比 */
+.icon-round{
+  background:rgba(var(--primary-rgb),.16);
+  border-color:rgba(var(--primary-rgb),.55);
+}
+
+/* 進度條與時間碼：11px@55% → 12px@88% */
+.prog{ height:5px !important; margin-top:14px !important; }
+.np-times{
+  margin-top:9px !important;
+  font-size:12px !important;
+  color:rgba(255,255,255,.88) !important;
+  letter-spacing:.6px;
+}
+
+/* 控制列：主鍵 46→64px，前後鍵 36×39→48×48 */
+.np-controls{ gap:26px !important; margin-top:4px !important; }
+.btn-ghost{
+  width:48px; height:48px; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  color:rgba(255,255,255,.92);
+}
+.btn-ghost svg{ width:26px; height:26px; }
+.btn-play{
+  width:64px !important; height:64px !important;
+  background:#fff !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.45),
+             0 0 0 1px rgba(255,255,255,.55),
+             0 0 22px rgba(var(--primary-rgb),.30) !important;
+}
+.btn-play svg{ width:28px; height:28px; }
+.btn-play svg path{ fill:#0d1420; }
+
+/* 開啟曲目表：10px → 11px + 44pt 點擊高度 */
+.np-next{
+  margin-top:8px !important;
+  padding:10px 2px 3px !important;
+  border-top:1px solid rgba(255,255,255,.13) !important;
+  min-height:44px;
+}
+.np-next span{
+  font-size:11px !important; letter-spacing:2.6px;
+  color:rgba(255,255,255,.78) !important;
+}
+
+/* --- 3. 曲目清單（主畫面 + Bottom Sheet 共用）--- */
+.tracklist-caption{            /* 10px → 11px */
+  font-size:11px !important; letter-spacing:2.8px;
+  color:rgba(255,255,255,.66) !important;
+}
+.track-row{                    /* 43px → 56px */
+  min-height:56px;
+  padding:11px 14px !important;
+  border-radius:16px !important;
+  gap:14px !important;
+}
+.track-num{ font-size:13px; width:26px; font-variant-numeric:tabular-nums; }
+.track-name{ font-size:16px; color:rgba(255,255,255,.88); }
+.track-row.current{ background:rgba(var(--primary-rgb),.14) !important; }
+.track-row.current .track-name{ color:#fff; font-weight:600; }
+.track-dl{ width:40px; height:40px; }
+
+/* 正在播放：金色脈動指示點 */
+.track-row.current .track-num{ position:relative; color:var(--primary); }
+.track-row.current .track-num::after{
+  content:"";
+  position:absolute; left:50%; bottom:-8px; transform:translateX(-50%);
+  width:5px; height:5px; border-radius:50%;
+  background:var(--primary);
+  box-shadow:0 0 8px rgba(var(--primary-rgb),.9);
+  animation:npPulse 1.6s ease-in-out infinite;
+}
+@keyframes npPulse{
+  0%,100%{ opacity:.35; transform:translateX(-50%) scale(.8); }
+  50%    { opacity:1;   transform:translateX(-50%) scale(1.25); }
+}
+
+/* Bottom Sheet */
+.sheet-eyebrow{ font-size:11px !important; letter-spacing:3.2px; }
+.sheet-title{ font-size:16px !important; }
+.sheet-close{ width:44px; height:44px; }
+
+/* =====================================================================
+ * 4. 歌詞頁：閱讀體驗重做
+ * ⚠️ white-space:pre-wrap 必須保留 —— 行首/行尾空格照原檔，不可 trim
+ * =================================================================== */
+.lyrics-head{
+  padding:calc(var(--sat, env(safe-area-inset-top)) + 18px) 22px 12px !important;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+#lyrics-title{ font-size:19px !important; letter-spacing:1.5px; }
+#lyrics-eyebrow{
+  font-size:11px !important; letter-spacing:3.4px;
+  color:var(--primary) !important;
+}
+#btn-close-lyrics{              /* 34×34 → 44×44 */
+  width:44px !important; height:44px !important;
+}
+
+.lyrics-body{
+  white-space:pre-wrap;          /* 鐵則：保留原檔空格與換行 */
+  padding:22px 26px calc(70px + var(--sab, env(safe-area-inset-bottom))) !important;
+  font-size:17px !important;     /* 16 → 17 */
+  line-height:2.1 !important;
+  color:rgba(255,255,255,.92) !important;
+  letter-spacing:.8px !important;
+  text-align:center;
+  text-wrap:pretty;
+}
+
+/* 製作名單小字區塊（待 lyrics-enhance.js 上線後自動生成）*/
+.lyrics-credits{
+  margin:34px auto 0;
+  padding-top:20px;
+  max-width:300px;
+  border-top:1px solid rgba(var(--primary-rgb),.28);
+  font-size:12px;
+  line-height:2;
+  letter-spacing:1.2px;
+  color:rgba(255,255,255,.52);
+  white-space:pre-wrap;
+  text-align:center;
+}
+
+/* 歌名小字註記（titleNote）*/
+.tn-note{
+  font-size:clamp(9px, 2.8vw, 11.5px);
+  color:rgba(255,255,255,.5);
+  margin-left:6px;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.lyrics-empty{ font-size:14px !important; }
+
+/* --- 5. 子頁：避開靈動島 + 字級 --- */
+.screen-sub{
+  padding-top:calc(var(--sat, env(safe-area-inset-top)) + 26px) !important;
+}
+.page-title-en{ font-size:28px; }
+.page-title-tc{ font-size:16px; }
+.page-note{ font-size:13px !important; color:rgba(255,255,255,.62) !important; }
+
+/* --- 6. 購買頁：選取狀態明確 + 主鈕主導 --- */
+.plans{ gap:14px !important; padding-top:24px !important; }
+.plan{
+  padding:20px !important;
+  border-radius:22px !important;
+  transition:border-color .2s ease, background .2s ease, transform .18s ease;
+}
+.plan:active{ transform:scale(.99); }
+.plan.selected{
+  border-color:var(--primary) !important;
+  background:rgba(var(--primary-rgb),.10) !important;
+  box-shadow:0 0 0 1px rgba(var(--primary-rgb),.45), 0 14px 34px rgba(0,0,0,.4);
+}
+.plan::before{
+  content:"";
+  position:absolute; top:22px; right:20px;
+  width:22px; height:22px; border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.35);
+  transition:all .2s ease;
+}
+.plan.selected::before{
+  border-color:var(--primary);
+  background:var(--primary);
+  box-shadow:inset 0 0 0 3px #0d1420;
+}
+.plan-name{ font-size:15px; color:rgba(255,255,255,.9); }
+.plan-price{ font-size:32px !important; letter-spacing:.5px; }
+.plan-feature{ font-size:13px !important; color:rgba(255,255,255,.76) !important; }
+.plan-badge{ font-size:10px; padding:5px 13px; letter-spacing:1.6px; }
+
+.cta-block{ padding:20px 24px 0 !important; }
+.btn-primary{
+  padding:17px !important; font-size:15px !important; border-radius:18px !important;
+  min-height:52px;
+  box-shadow:0 14px 32px rgba(var(--primary-rgb),.28);
+}
+.btn-outline{
+  padding:15px !important; font-size:13.5px !important; min-height:48px;
+  color:rgba(255,255,255,.85) !important;
+  border-color:rgba(255,255,255,.28) !important;
+}
+
+/* --- 7. 表單（兌換頁）--- */
+.form-label{ font-size:12px !important; color:rgba(255,255,255,.62) !important; }
+.form-input{ padding:16px !important; font-size:16px !important; min-height:52px; }
+.form-hint{ font-size:13px !important; padding:8px; min-height:44px; }
+
+/* =====================================================================
+ * 8. NAV 島：★ 修掉粉紅 → 墨金
+ * =================================================================== */
+#nav{
+  padding:7px !important;
+  background:rgba(14,22,36,.30) !important;
+  border-color:rgba(255,255,255,.13) !important;
+}
+.navbtn{
+  min-height:48px;              /* 46 → 48 */
+  padding:8px 0 7px !important;
+  font-size:11px !important;    /* 9px → 11px */
+  letter-spacing:1px;
+  color:rgba(255,255,255,.55) !important;
+}
+.navbtn .navlbl{ opacity:.85; }
+/* ★ styles.css 寫死 #fbd6e6（Secret Lover 殘留）→ 品牌金 */
+.navbtn.active{ color:var(--primary) !important; }
+.navbtn.active .navico{ filter:drop-shadow(0 0 8px rgba(var(--primary-rgb),.75)); }
+.navbtn.active .navlbl{ opacity:1; }
+#nav-ind{
+  background:linear-gradient(180deg, rgba(var(--primary-rgb),.30), rgba(var(--primary-rgb),.10)) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),
+             inset 0 0 14px rgba(var(--primary-rgb),.22),
+             0 4px 12px rgba(0,0,0,.2) !important;
+}
+
+/* --- 9. 心情牆 --- */
+.mood-count{ font-size:13px !important; }
+.mood-tag{ font-size:12.5px; padding:10px 15px; min-height:40px; }
+.mood-note-text{ font-size:14px !important; }
+.mood-textarea{ font-size:15px !important; }
